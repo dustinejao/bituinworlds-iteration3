@@ -1,0 +1,6 @@
+function GSinitCursorEffect(){let e=document.querySelectorAll("[data-cursor-effect]");e.forEach(e=>{let t=JSON.parse(e.getAttribute("data-cursor-effect")),{shiftX:r=0,shiftY:n=0,rotateX:s=0,rotateY:o=0,selector:a=null,restore:l=!1}=t,u=a?document.querySelector(a):window,i=!a;if(0!==s||0!==o){let v=e.parentElement;v&&(v.style.perspective="1000px",v.style.transformStyle="preserve-3d")}let d=t=>{if(!i)return;let{clientX:a,clientY:l}=t,{innerWidth:u,innerHeight:v}=window,d=(a-u/2)/(u/2),f=(l-v/2)/(v/2);e.style.transform=`
+                translateX(${d*r}px)
+                translateY(${f*n}px)
+                rotateX(${-f*s}deg)
+                rotateY(${d*o}deg)
+            `},f=()=>{i=!0},m=()=>{i=!1,l&&(e.style.transform="none")};return a&&(u.addEventListener("mouseenter",f),u.addEventListener("mouseleave",m)),u.addEventListener("mousemove",d),()=>{a&&(u.removeEventListener("mouseenter",f),u.removeEventListener("mouseleave",m)),u.removeEventListener("mousemove",d)}})}document.addEventListener("DOMContentLoaded",GSinitCursorEffect);
