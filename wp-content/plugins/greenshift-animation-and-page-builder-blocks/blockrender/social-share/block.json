@@ -1,0 +1,7 @@
+{
+	"apiVersion": 3,
+	"name": "greenshift-blocks/social-share",
+    "title": "Social Share",
+    "description": "Social Share buttons",
+	"category":"GreenShift"
+}
